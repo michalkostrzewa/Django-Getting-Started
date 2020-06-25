@@ -1,24 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>THING!!</title>
-</head>
-<body>
-    <ul>
+{% extends "base.html" %}
+
+{% block title %}
+    THING!!
+{% endblock %}
+
+{% block content %}
+
+    <table>
         {% for thing in things %}
-            <li>
-                <la> thing {{thing.pk}}</la>
-                <la> {{ thing.name }} </la>
-                <la> cost : {{thing.cost}}</la>
-                <la> note : {{thing.note}}</la>
-                <la><a href="{%url 'update' thing.id %}"> update</a></la>
-                <la><a href="{%url 'delete' thing.id %}"> delete</a></la>
-            </li>
+            <tr>
+                <td> thing {{thing.pk}}</td>
+                <td>{{ thing.name }}</td> 
+                <td> cost : {{thing.cost}}</td>
+                <td>  note : {{thing.note}}</td>
+                <td><a href="{%url 'update' thing.id %}"> update</a></td>
+                <td><a href="{%url 'delete' thing.id %}"> delete</a></td>
+            </tr>
         {% endfor %}
         
-           <p><a href="/">come back to home page</a></p> 
+            
         
-    </ul>
-</body>
-</html>
+    </table>
+    <p><a href="{% url 'index' %}">come back to home page</a></p>
+
+{% endblock %}

@@ -1,19 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>THING!!</title>
-</head>
-<body>
-<h1> thing {{T.pk}}</h1>
-<p> name : {{T.name}}</p>
-<p> cost : {{T.cost}}</p>
-<p> user : {{T.user}}</p>
-<p> note : {{T.note}}</p>
-<p> bought_at : {{T.bought_at}}</p>
+{% extends "base.html" %}
 
-<a href="{% url 'list' %}">come back to list page</a>
-<a href="{% url 'index' %}">come back to home page</a>
+{% block title %}
+    THING!!
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
+
+<center> <h1> thing {{T.pk}}</h1></center>
+<table>
+    <tr>
+        <td>name : {{T.name}}</td>
+        <td>cost : {{T.cost}}</td>
+        <td>user : {{T.user}}</td>
+        <td>note : {{T.note}}</td>
+        <td>bought_at : {{T.bought_at}}</td>
+    </tr>
+</table>
+ 
+<p> <a href="{% url 'list' %}">come back to list page</a></p>
+<p><a href="{% url 'index' %}">come back to home page</a></p>
+
+{% endblock %}

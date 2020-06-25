@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>THING!!</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}
+    THING!!
+{% endblock %}
+
+{% block content %}
+
 <h1> thing </h1>
 <p> There are currentyly  <b>{{ num_things }}</b> things in the database.</p>
 
 <p>
-    <a href="{% url 'list' %}">list of things</a>
+    <a href="{% url 'list' %}">go to list of things</a>
 </p>
-</body>
-</html>
+
+{% endblock %}
