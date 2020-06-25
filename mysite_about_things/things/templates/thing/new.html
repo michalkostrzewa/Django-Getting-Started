@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+    New Thing
+{% endblock %}
+
+{% block content %}
+
+<center><h1>Add a new thing</h1></center>
+<form method="post">
+    <table>
+        {{ form }}
+    </table>
+    {% csrf_token %}
+    <button type="submit">Create</button>
+</form>
+<p> <a href="{% url 'list' %}">come back to list page</a></p>
+<p><a href="{% url 'index' %}">come back to home page</a></p>
+{% endblock %}
