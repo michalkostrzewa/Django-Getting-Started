@@ -4,18 +4,22 @@ from things.models import Thing
 
 def thing(request):
     return render(request,"thing/thing.html",
-                {"num_things": Thing.objects.count()})
+                {"num_things": Thing.objects.count(),
+                 "things": Thing.objects.all()   })
 
 def create(request):
     return HttpResponse("create thing")
 
 def list(request):
-    return HttpResponse("list of things")
+     return render(request,"thing/list.html",
+                { "things": Thing.objects.all()   })
 
 def update(request, id):
     T= get_object_or_404(Thing, pk=id)
     return render(request,"thing/update.html",
                     {"T": T} )
 
-def delete(request):
-    return HttpResponse("delete ")
+def delete(request, id):
+    T= get_object_or_404(Thing, pk=id)
+    return render(request,"thing/delete.html",
+                    {"T": T} )

@@ -19,9 +19,9 @@ from things.views import thing, create, list, update, delete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', thing), #'thing.html'
-    path('create',create),
-    path('list',list),
-    path('update/<int:id>',update),
-    path('delete',delete),
+    path('', thing, name="index"), #'thing.html'
+    path('create',create, name="create"),
+    path('list',list, name="list"),
+    path('update/<int:id>',update, name="update"),
+    path('delete/<int:id>',delete, name="delete"),
 ]

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>THING!!</title>
+</head>
+<body>
+    <ul>
+        {% for thing in things %}
+            <li>
+                <la> thing {{thing.pk}}</la>
+                <la> {{ thing.name }} </la>
+                <la> cost : {{thing.cost}}</la>
+                <la> note : {{thing.note}}</la>
+                <la><a href="{%url 'update' thing.id %}"> update</a></la>
+                <la><a href="{%url 'delete' thing.id %}"> delete</a></la>
+            </li>
+        {% endfor %}
+        
+           <p><a href="/">come back to home page</a></p> 
+        
+    </ul>
+</body>
+</html>
