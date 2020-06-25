@@ -22,6 +22,6 @@ urlpatterns = [
     path('', thing), #'thing.html'
     path('create',create),
     path('list',list),
-    path('update',update),
+    path('update/<int:id>',update),
     path('delete',delete),
 ]
