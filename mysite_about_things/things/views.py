@@ -27,7 +27,7 @@ def update(request, id):
         form = ThingForm(request.POST, instance=thing)            #
         if form.is_valid():
             form.save()
-            return redirect("/")
+            return redirect("/list")
     else:
         form = ThingForm( instance=thing)
     return render(request,"thing/update.html",
