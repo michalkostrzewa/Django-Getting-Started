@@ -6,18 +6,14 @@
 
 {% block content %}
 
-<center> <h1> thing {{T.pk}} {{T.name}}</h1></center>
-<table>
-    <tr>
-        <td>name : {{T.name}}</td>
-        <td>cost : {{T.cost}}</td>
-        <td>user : {{T.user}}</td>
-        <td>note : {{T.note}}</td>
-        <td>bought_at : {{T.bought_at}}</td>
-    </tr>
-</table>
-
+<center><h1>Update thing</h1></center>
+<form method="post">
+    <table>
+        {{ form }}
+    </table>
+    {% csrf_token %}
+    <button type="submit">Update</button>
+</form>
 <p> <a href="{% url 'list' %}">come back to list page</a></p>
 <p><a href="{% url 'index' %}">come back to home page</a></p>
-
 {% endblock %}

@@ -14,7 +14,7 @@
                 <td> cost : {{thing.cost}}</td>
                 <td>  note : {{thing.note}}</td>
                 <td><a href="{%url 'update' thing.id %}"> update</a></td>
-                <td><a href="{%url 'delete' thing.id %}"> delete</a></td>
+                <td><a href="{%url 'delete' thing.id %}" > delete</a></td>
             </tr>
         {% endfor %}
     </table>
